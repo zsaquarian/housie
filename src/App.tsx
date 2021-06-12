@@ -1,12 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   ChakraProvider,
   Box,
   Text,
-  Link,
-  VStack,
-  Code,
-  Grid,
   theme,
   Button,
   Table,
@@ -15,8 +11,6 @@ import {
   Td,
   Flex,
 } from '@chakra-ui/react';
-import { ColorModeSwitcher } from './ColorModeSwitcher';
-import { Logo } from './Logo';
 
 export const App = () => {
   const [list, setList] = useState([] as number[]);
