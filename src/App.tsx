@@ -15,6 +15,7 @@ import {
 export const App = () => {
   const [list, setList] = useState([] as number[]);
   const [table, setTable] = useState([] as JSX.Element[]);
+  let disabled = list.length >= 90;
 
   const makeTable = () => {
     let ret = [];
@@ -51,22 +52,21 @@ export const App = () => {
       <Box textAlign="center" fontSize="xl">
         <Flex alignItems="center" justifyContent="space-around" m={4}>
           <Button
+            disabled={disabled}
             onClick={() => {
               if (list.length <= 90) {
-                let random = Math.floor(Math.random() * 91);
+                let random = Math.floor(Math.random() * 90) + 1;
                 while (list.includes(random))
                   random = Math.floor(Math.random() * 91);
                 setList(list.concat(random));
                 makeTable();
-              } else {
-                alert('Game has ended. What you doing, man?');
               }
             }}
           >
             New Number
           </Button>
           <Text fontSize="3xl">{list[list.length - 1]}</Text>
-          <Button backgroundColor="red" onClick={() => setList([])}>
+          <Button backgroundColor="red" onClick={() => {setList([]); disabled = false;}}>
             Clear
           </Button>
         </Flex>
