@@ -1,4 +1,3 @@
-This project was bootstrapped with
-[Create React App](https://github.com/facebook/create-react-app).
+# Housie React
 
-Start the app with `yarn dev`
+A simple housie game made in React. 
